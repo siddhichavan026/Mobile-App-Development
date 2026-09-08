@@ -31,7 +31,7 @@ function App() {
 function AppContent() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello! Jatin.....</Text>
+      <Text style={styles.title}>Hello! Siddhi.....</Text>
       <Text style={styles.subtitle}>Welcome To My App.</Text>
     </View>
     
