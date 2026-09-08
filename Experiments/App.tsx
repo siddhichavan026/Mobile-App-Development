@@ -18,9 +18,19 @@ import { useState } from 'react';
 import MyParent from './Props_activity/MyParent';
 import Custom_button from './Reusable_components/Custom_button';
 import HomeScreen from './Exp05/HomeScreen';
+import Customcard from './Exp05/CustomCard';
+import CustomHeader from './Exp05/CustomHeader';
+import CustomButton from './Exp05/CustomButton';
+import CustomInput from './Exp05/CustomInput';
+import DebugExample from './DebugExample';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
+   const [name, setName] = useState('');
+   const [email, setEmail] = useState('');
+   const [department , setDepartment] = useState('');
+   const [rollNo, setRollNo] = useState('');
+
   
   const handleSubmit = ()=>{
     Alert.alert("Button clicked");
@@ -46,7 +56,49 @@ function App() {
       {/* <Custom_button title="Click" onpress={handleSubmit}/>
       <Custom_button title="Login" onpress={handleLogin}/> */}
 
-      <HomeScreen/>
+      {/* Exp 05 */}
+      {/* <View style={styles.container}> 
+         <CustomHeader title='Hello from Siddhi'/>
+        <Customcard name='Siddhi' age='21' rollNo='23UAM018' department='AIML' />
+        <CustomInput placeholder='Enter name' value={name} onChangeText={setName}/>
+        <CustomButton title="Click here" onPress={handleSubmit}/>
+      </View> */}
+
+      {/* <View style={styles.container}>
+        <CustomHeader title="Hello from Siddhi" />
+        <CustomHeader title="Welcome to Home page"/>
+        <CustomHeader title="Hello User"/>
+        <CustomHeader title="Welcome to DKTE"/>
+      </View> */}
+
+      {/* <View style={styles.container}>
+        <CustomInput placeholder='Enter name' value={name} onChangeText={setName}/>
+        <CustomInput placeholder='Enter Email' value={email} onChangeText={setEmail}/>
+        <CustomInput placeholder='Enter Roll no' value={rollNo} onChangeText={setRollNo}/>
+        <CustomInput placeholder='Enter Department' value={department} onChangeText={setDepartment}/>
+      </View> */}
+
+      {/* <View style={styles.container}>
+        <CustomButton title='Register' onPress={handleSubmit}/>
+        <CustomButton title='Login' onPress={handleSubmit}/>
+        <CustomButton title='Click' onPress={handleSubmit}/>
+        <CustomButton title='Exit' onPress={handleSubmit}/>
+      </View> */}
+
+      {/* <View style={styles.container}>
+        <Customcard name='Siddhi' age='21' rollNo='23UAM018' department='AIML' />
+        <Customcard name='Riddhi' age='21' rollNo='202604' department='Forensic Science'/> 
+      </View>
+      */}
+
+      {/* Exp 06 */}
+      {/* <HomeScreen/> */}
+
+      {/* DebugExample  */}
+      {/* <View style={styles.container}>
+        <DebugExample/>
+      </View> */}
+      
     </SafeAreaProvider>
   );
 }
@@ -67,6 +119,8 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop : 50, 
+   
   },
 });
 
