@@ -20,7 +20,7 @@ function App() {
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       />
-      {/* <AppContent /> */}
+      <AppContent />
       {/*<LoginScreen/>*/}
       {/* <StudentCard/> */}
       <CounterUI/>
@@ -31,7 +31,7 @@ function App() {
 function AppContent() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello! Siddhi.....</Text>
+      <Text style={styles.title}>Hello! Jatin.....</Text>
       <Text style={styles.subtitle}>Welcome To My App.</Text>
     </View>
     
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#e4a0c7',
+    backgroundColor: '#f5f5f5',
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color : '#8724c9',
+    color : 'Black',
     marginBottom: 10,
   },
   subtitle: {
