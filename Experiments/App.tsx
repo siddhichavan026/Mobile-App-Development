@@ -23,6 +23,8 @@ import CustomHeader from './Exp05/CustomHeader';
 import CustomButton from './Exp05/CustomButton';
 import CustomInput from './Exp05/CustomInput';
 import DebugExample from './DebugExample';
+import ProfileScreen from './Exp06/ProfileScreen';
+import SettingScreen from './Exp06/SettingScreen';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -65,7 +67,7 @@ function App() {
       </View> */}
 
       {/* <View style={styles.container}>
-        <CustomHeader title="Hello from Siddhi" />
+        <CustomHeader title="Hello from Ankita" />
         <CustomHeader title="Welcome to Home page"/>
         <CustomHeader title="Hello User"/>
         <CustomHeader title="Welcome to DKTE"/>
@@ -88,11 +90,13 @@ function App() {
       {/* <View style={styles.container}>
         <Customcard name='Siddhi' age='21' rollNo='23UAM018' department='AIML' />
         <Customcard name='Riddhi' age='21' rollNo='202604' department='Forensic Science'/> 
-      </View>
-      */}
+      </View> */}
+     
 
       {/* Exp 06 */}
       {/* <HomeScreen/> */}
+      {/* <ProfileScreen/> */}
+      <SettingScreen/>
 
       {/* DebugExample  */}
       {/* <View style={styles.container}>
