@@ -17,7 +17,6 @@ import Screen from './Exp04/Screen';
 import { useState } from 'react';
 import MyParent from './Props_activity/MyParent';
 import Custom_button from './Reusable_components/Custom_button';
-import HomeScreen from './Exp05/HomeScreen';
 import Customcard from './Exp05/CustomCard';
 import CustomHeader from './Exp05/CustomHeader';
 import CustomButton from './Exp05/CustomButton';
@@ -25,6 +24,7 @@ import CustomInput from './Exp05/CustomInput';
 import DebugExample from './DebugExample';
 import ProfileScreen from './Exp06/ProfileScreen';
 import SettingScreen from './Exp06/SettingScreen';
+import HomeScreen from './Exp06/HomeScreen';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -96,7 +96,10 @@ function App() {
       {/* Exp 06 */}
       {/* <HomeScreen/> */}
       {/* <ProfileScreen/> */}
-      <SettingScreen/>
+      {/* <SettingScreen/> */}
+
+      {/* Exp 6 with navigation */}
+      <HomeScreen/>
 
       {/* DebugExample  */}
       {/* <View style={styles.container}>
