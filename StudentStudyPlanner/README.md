@@ -13,28 +13,34 @@ Shared state — all task data (add/complete/delete) is managed centrally in App
 Reusable UI components — custom header, input, button and card components for a consistent look across screens.
 
 ## Project Structure
+## Project Structure
+
+```text
 StudentStudyPlanner/
-├── App.tsx                  # Root component, manages navigation & task state
+├── App.tsx                         # Root component, manages navigation & task state
 ├── screens/
-│   ├── LoginScreen.tsx       # Login form
-│   ├── RegisterScreen.tsx    # Registration form
-│   ├── HomeScreen.tsx        # Dashboard with today's progress
-│   ├── TaskScreen.tsx        # Full task list with complete/delete actions
-│   └── AddTaskScreen.tsx     # Form to add a new task
+│   ├── LoginScreen.tsx             # Login form
+│   ├── RegisterScreen.tsx          # Registration form
+│   ├── HomeScreen.tsx              # Dashboard with today's progress
+│   ├── TaskScreen.tsx              # Full task list with complete/delete actions
+│   └── AddTaskScreen.tsx           # Form to add a new task
 ├── components/
-│   ├── CustomHeader.tsx      # Reusable screen header
-│   ├── CustomInput.tsx       # Reusable text input
-│   ├── CustomButton.tsx      # Reusable button
-│   └── CustomCard.tsx        # Task/progress card with status & actions
-└── theme.ts                  # Shared colors, font sizes, and styling constants
+│   ├── CustomHeader.tsx            # Reusable screen header
+│   ├── CustomInput.tsx             # Reusable text input
+│   ├── CustomButton.tsx            # Reusable button
+│   └── CustomCard.tsx              # Task/progress card with status & actions
+└── theme.ts                        # Shared colors, font sizes, and styling constants
+```
 
 ## App Flow
 The app uses simple state-based navigation (no navigation library) managed in App.tsx via a screen state variable:
+```text
 Login ──► Register
   │
   └──► Home ──► My Tasks ──► Add Task
                     │
                     └──► Back to My Tasks
+```
 
 
 1.login	Screen - Default screen. User logs in or navigates to register.
