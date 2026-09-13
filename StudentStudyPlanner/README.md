@@ -1,97 +1,80 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## 📚 Student Study Planner
 
-# Getting Started
+A simple React Native mobile app that helps students plan, track, and manage their daily study tasks across different subjects. Users can log in, view their tasks, mark them as complete, delete them and add new ones — all synced across the Home and Tasks screens.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
+Login / Register flow — simple email-password based authentication screens (mocked, no backend).
+Home Screen — displays a welcome message and today's task progress at a glance.
+My Tasks Screen — full list of tasks with the ability to:
+- Mark a task as Complete
+- Delete a task
+Add Task Screen — add new tasks with a title and subject.
+Shared state — all task data (add/complete/delete) is managed centrally in App.tsx and passed down as props, keeping Home and Tasks screens in sync.
+Reusable UI components — custom header, input, button and card components for a consistent look across screens.
 
-## Step 1: Start Metro
+## Project Structure
+StudentStudyPlanner/
+├── App.tsx                  # Root component, manages navigation & task state
+├── screens/
+│   ├── LoginScreen.tsx       # Login form
+│   ├── RegisterScreen.tsx    # Registration form
+│   ├── HomeScreen.tsx        # Dashboard with today's progress
+│   ├── TaskScreen.tsx        # Full task list with complete/delete actions
+│   └── AddTaskScreen.tsx     # Form to add a new task
+├── components/
+│   ├── CustomHeader.tsx      # Reusable screen header
+│   ├── CustomInput.tsx       # Reusable text input
+│   ├── CustomButton.tsx      # Reusable button
+│   └── CustomCard.tsx        # Task/progress card with status & actions
+└── theme.ts                  # Shared colors, font sizes, and styling constants
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## App Flow
+The app uses simple state-based navigation (no navigation library) managed in App.tsx via a screen state variable:
+Login ──► Register
+  │
+  └──► Home ──► My Tasks ──► Add Task
+                    │
+                    └──► Back to My Tasks
 
-To start the Metro dev server, run the following command from the root of your React Native project:
 
-```sh
-# Using npm
-npm start
+1.login	Screen - Default screen. User logs in or navigates to register.
+2.register Screen -	New user registration, then redirects to login.
+3.home Screen - Shows welcome message and today's task progress.
+4.tasks Screen - 	Full task list with Complete/Delete actions.
+5.addTask - 	Form to add a new task, returns to Tasks screen.
 
-# OR using Yarn
-yarn start
-```
+## Tech Stack
+React Native (with TypeScript)
+React Hooks (useState) for state management
+No external navigation or state management libraries — kept intentionally simple for learning purposes.
 
-## Step 2: Build and run your app
+## Getting Started
+Prerequisites - 
+Node.js installed
+React Native development environment set up (official guide)
+Android Studio / Xcode (depending on target platform)
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Installation
+# Install dependencies
+npm install
 
-### Android
+# Start Metro bundler
+npx react-native start
 
-```sh
-# Using npm
-npm run android
+# Run on Android
+npx react-native run-android
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run on iOS
 npm run ios
 
-# OR using Yarn
-yarn ios
-```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Future Improvements
+- Persist tasks using local storage (e.g., AsyncStorage) so data isn't lost on app restart
+- Real authentication with a backend (Firebase / custom API)
+- Task editing support
+- Due dates and reminders/notifications
+- Filter/sort tasks by subject or status
+- Dark mode support
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## License
+This project is for educational purposes. Feel free to fork and modify it for your own learning.
